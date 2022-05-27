@@ -8,6 +8,7 @@ auth		required	pam_deny.so
 account		required	pam_unix.so
 # Don't fail if the user is unknown to sssd or if sssd isn't running
 account		required	pam_sss.so ignore_unknown_user ignore_authinfo_unavail
+account     required    pam_slurm_adopt.so action_no_jobs=deny log_level=debug
 account		required	pam_faillock.so
 account		optional	pam_permit.so
 
